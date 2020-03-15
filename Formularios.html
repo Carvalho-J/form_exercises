@@ -6,33 +6,64 @@
 </head>
 <body>
 
-    <form>
+    <form method="post" id="fContato" action="mailto:contato@example.com">
         <fieldset id="usuario"><legend>Identificação do Usuário</legend>
-            <p>Nome: <input type="text" name="tnome" id="cNome" size="20" maxlength="30" placeholder="Nome completo"></p>
-            <p>Senha:<input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="Senha"> </p>
-            <p>E-mail:<input type="email" name="tMail" id="cMail" size="20" maxlength="40" placeholder="example@email.com"/></p>
+            <p><label for="cNome"> Nome:</label>
+                <input type="text" name="tnome" id="cNome" size="20" maxlength="30" placeholder="Nome completo"></p>
+            <p><label for="cSenha">Senha:</label>
+                <input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="Senha"> </p>
+            <p><label for="cMail">E-mail:</label>
+                <input type="email" name="tMail" id="cMail" size="20" maxlength="40" placeholder="example@email.com"/></p>
             <fieldset id="sexo"><legend>Sexo:</legend>
                 <input type="radio" name="cSexo" id="cMasc"/> <label for="cMasc">Masculino</label>
-                <input type="radio" name="cSexo" id="cFem"/ > <label for="cFem">Feminino</label>
-            </fieldset>
+                <input type="radio" name="cSexo" id="cFem"/> <label for="cFem">Feminino</label>
+                <input type="radio" name="cSexo" id="cOutro"/><label for="cOutro">Outro</label>
+             </fieldset>
             <p>Data de Nascimento:<input type="date" name="tDate"> </p>
         </fieldset>
 
         <fieldset>
-                Endereço do Usuário
-                Número:
-                Logradouro:
-                Estado:
-                Cidade:
+            <legend>Endereço do Usuário</legend>
+            <p><label for="cRua"><>Logradouro:</label>
+                <input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Rua, Ave, Trave"/></p>
+            <p><label for="cNum">Número:</label>
+                <input type="number" name="tNum" id="cNum" min="0" size="4" max="99999" /> </p>
+            <p><label for="cEst">Estado:</label>
+                <select name="tEst" id="cEst">
+                    <optgroup label="Região Sul"
+                        <option selected value="PR">Paraná</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                    </optgroup>
+                    <option value="SP">São Paulo</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="ES">Espirito Santo</option>
+                    <option value="MG">Minas Gerais</option>
+                </select>
+            </p>
+            <p><label for="cCid">Cidade:</label></p>
+            <input type="text" name="tCid" id="cCid" maxlength="40" size="20" placeholder="Sua cidade" list="cidades">
+            <datalist id="cidades">
+                <option value="Curitiba"></option>
+                <option value="Guarapuava"></option>
+                <option value="Umuarama"></option>
+                <option value="Londrina"></option>
+                <option value="Maringá "></option>
+            </datalist>
+
         </fieldset>
 
         <fieldset>
-            Mensagem do Usuário
-            Grau de Urgência:
-            Mensagem:
-            Cor:
-            Quantidade:
-            Preço Total: R$
+            <p>Mensagem do Usuário</p>
+            <p>Grau de Urgência:</p>
+
+        </fieldset>
+
+        <fieldset>
+            <p>Mensagem:</p>
+            <p>Cor:</p>
+            <p>Quantidade:</p>
+            <p>Preço Total: R$</p>
         </fieldset>
 
 
