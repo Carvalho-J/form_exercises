@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+form {
+    width: 700px;
+    margin: auto;
+}
+
+input, textarea {
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: 15pt;
+    background-color: rgba(255,255,255,0.3); /*coloca transparência no fundo da caixa de texto, caso seja colocada
+    uma imagem ela não será coberta nem ficará cortada.*/
+}
+input:hover, textarea:hover {
+    background-color: rgba(221,221,221,0.3);
+}
+
+legend {
+    color: #888888;
+    font-weight: bold;
+    font-size: 15pt;
+    font-family: sans-serif;
+}
+
+fieldset {
+    border-color: #cecece;
+    margin: 15px;
+}
+
+fieldset#sexo {
+    width: 280px;
+}
+
+fieldset#usuario {
+    background: url("img/icone-contato.png") no-repeat 95% 95%;
+}
+
+fieldset#mensagem {
+    background: url("img/icone-mensagem.png") no-repeat 95% 95%;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    background-color: #white;
+}
+
+input[type="range"]:focus {
+    outline: none;
+}
+nput[type="range"]::-webkit-slider-runnable-track {
+    background: white;
+    height: 5px;
+}
+
+input[type="range"]::-moz-range-track {
+    background: #888888;
+    height: 5px;
+}
+input[type="range"]::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    background: white;
+    margin-top: -5px;
+    border-radius: 50%;
+}

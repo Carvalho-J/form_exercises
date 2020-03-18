@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function calc_total() {
+            var qtd = parseInt(document.getElementById('cQtd').value);
+            tot = qtd * 1500;
+            document.getElementById('cTot').value = tot;
+        }
+    </script>
 </head>
 <body>
 
-    <form method="post" id="fContato" action="mailto:contato@example.com">
+    <form method="post" id="fContato" action="mailto:contato@example.com" oninput="calc_total();">
         <fieldset id="usuario"><legend>Identificação do Usuário</legend>
             <p><label for="cNome"> Nome:</label>
                 <input type="text" name="tnome" id="cNome" size="20" maxlength="30" placeholder="Nome completo"></p>
@@ -24,8 +32,8 @@
 
         <fieldset>
             <legend>Endereço do Usuário</legend>
-            <p><label for="cRua"><>Logradouro:</label>
-                <input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Rua, Ave, Trave"/></p>
+            <p><label for="cRua">Logradouro:</label>
+                <input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Rua, Aven, Trave"/></p>
             <p><label for="cNum">Número:</label>
                 <input type="number" name="tNum" id="cNum" min="0" size="4" max="99999" /> </p>
             <p><label for="cEst">Estado:</label>
@@ -53,23 +61,25 @@
 
         </fieldset>
 
-        <fieldset>
-            <p>Mensagem do Usuário</p>
-            <p>Grau de Urgência:</p>
-
+        <fieldset id="mensagem"><legend>Mensagem do Usuário</legend>
+            <p><label for="cUrg">Grau de Urgência:</label></p>
+            Min<input type="range" name="tUrg" id="cUrg" min="0" max="20" step="2"/> Máx
+            <p><label for="cMsg">Mensagem</label>
+            <textarea name="tMsg" id="cMsg" cols="35" rows="10" placeholder="Digite aqui sua mensagem"></textarea></p>
         </fieldset>
 
-        <fieldset>
-            <p>Mensagem:</p>
-            <p>Cor:</p>
-            <p>Quantidade:</p>
-            <p>Preço Total: R$</p>
+        <fieldset id="pedido"><legend>Quero produto x</legend>
+            <p><input type="checkbox" name="tPed" id="cPed" checked>
+            <label for="cPed">Realizar pedido de produto x</p></label>
+            <p><label for="cCor">Cor:</label>
+            <input type="color" name="tCor" id="cCor" value="#000000"></p>
+            <p><label for="cQtd">Quantidade:</label>
+            <input type="number" name="tQtd" id="cQtd" min="1" max="10"></p>
+            <p><label for="cTot">Preço Total: R$</label>
+            <input type="text" name="tTot" id="cTot" placeholder="Total" readonly>,00</p>
+            <!--input type="submit" value="Enviar">  or -->
+            <input type="image" src="img/botão-enviar.jpg" name="tEnviar" id="cEnviar">
         </fieldset>
-
-
-
-
-
     </form>
 </body>
 </html>
